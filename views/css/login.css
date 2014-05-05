@@ -1,0 +1,102 @@
+
+.logo 
+    {
+    background: none repeat scroll 0 0 #04B404;
+    color: #FFFFFF;
+    float: left;
+    font-size: 20px;
+    height: 42px;
+    overflow: hidden;
+    padding-top: 7px;
+    text-align: center;
+    width: 150px;
+    }
+
+
+
+.first
+    {
+    width: 35%;
+    float: left;
+    margin-left: 20%;
+    margin-top: 8%;
+    }
+.first h1
+    {
+    font-size: 25px;
+    margin-left: 90px;
+    margin-top: 50px;
+    }
+form
+    {
+	border:solid 1px #BDBDBD;
+	}
+.error
+    {
+    color:red;
+    height:20px;
+    width:400px;
+    margin-left:120px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    }
+
+.first form ul 
+    {
+	margin-top:30px;
+    margin-bottom:30px;
+    }
+.first form ul li
+    {
+    display:block;
+    list-style:none;
+    margin-bottom:20px;
+    }
+
+.first form ul li label
+    {
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	width: 120px;
+	}
+.input
+    {
+	width: 300px;
+	font-size:15px;
+    height: 30px;
+    }
+#submit
+    {
+	margin-left:220px;
+	height: 30px;
+    width:90px;
+    font-size:16px;
+    }
+
+ 
+     
+sidebar
+    {
+	float:left;
+	margin-left: 500px;
+    }
+sidebar ul
+    {
+    list-style:none;
+    }
+sidebar ul li
+    {
+	padding-bottom:10px;
+	font-size:17px;
+	}
+
+sidebar ul li a
+    {
+    text-decoration:none;
+    }
+sidebar ul li a:hover
+    {
+    text-decoration:underline;
+    }
+   

@@ -1,28 +1,25 @@
 <?php
 	ini_set("display_errors", 1);	
-	include 'controllers/home.php';
+	include 'controllers/login_controler.php';
 	
 	$action = (isset($_REQUEST['action']))?$_REQUEST['action']:"";
 	
 	$controller = new Home();
 	switch ($action) {
 		case 'loginProcess':
+			$controller->login();
 			
 			break;
 			
-		case 'signUpProcess':
+		case 'registrationProcess':
 			
 			break;
 			
-		case 'displayBugs':
+		case 'bugsPage':
 			
 			break;
-			
-		case 'loginProcess':
-			
-			break;
-		
+					
 		default:
-			$controller->welcome();			
+			$controller->login();			
 			break;
 	} 
