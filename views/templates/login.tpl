@@ -13,7 +13,7 @@
 		<form action="" method="post"  name="myForm" > 
 			<ul>
 			<div class="error">
-            {{feedback}}               
+            {{feedback}}              
             </div>
 				<li>
 				<label for="UserName" >UserName</label>
