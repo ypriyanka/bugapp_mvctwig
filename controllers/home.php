@@ -10,7 +10,7 @@
 		
 		public function __construct() {
 			Twig_Autoloader::register();
-			$this->twig = new Twig_Environment( new Twig_Loader_Filesystem("views"));
+			$this->twig = new Twig_Environment( new Twig_Loader_Filesystem("views/templates"));
 		}
 		
 		public function welcome()

@@ -7,7 +7,7 @@
 	$controller = new Home();
 	switch ($action) {
 		case 'loginProcess':
-			echo 1;
+			
 			break;
 			
 		case 'signUpProcess':
