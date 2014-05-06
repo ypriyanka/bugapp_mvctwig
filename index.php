@@ -11,11 +11,14 @@
 			
 			break;
 			
-		case 'registrationProcess':
+		case 'registrationProcess': $controller -> signuppage();
+			
+			break; 
+			
+		case 'bugsPage':$controller -> bugs_display();
 			
 			break;
-			
-		case 'bugsPage':
+		case 'signupcheck':$controller->signupcheck();
 			
 			break;
 					

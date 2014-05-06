@@ -10,15 +10,13 @@ $database->select('bug_tracker');
 class Valid
 {
 	public $a;
-public function validation()
-{
-        
-       if(!empty($_POST['UserName']) && !empty($_POST['Password']))
-{
-  $UserNamef = $_POST['UserName'];
-  $Passwordf = $_POST['Password'];
-
-   $checklogin = mysql_query('SELECT * from login_users where UserName = "'. $UserNamef.'" ') or die(mysql_error());
+	public function validation()
+	{
+		if(!empty($_POST['UserName']) && !empty($_POST['Password']))
+		{
+			$UserNamef = $_POST['UserName'];
+			$Passwordf = $_POST['Password'];
+			$checklogin = mysql_query('SELECT * from login_users where UserName = "'. $UserNamef.'" ') or die(mysql_error());
 
     $row = mysql_fetch_array($checklogin);
      
@@ -53,6 +51,18 @@ $this->a="valid";
    }
 return $this->a;
 }
+public function register()
+	{
+		$sql="INSERT INTO login_users(Name,UserName,Password,Email,gender)
+		VALUES('$_POST[name]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[gender]')";
+		if (!mysql_query($sql))
+		{
+			die('Error: ' . mysql_error());
+		}
+		else
+		{
+			return "sucess";
+		}
+	}
 }
-//$database->disconnectdb();
 ?>

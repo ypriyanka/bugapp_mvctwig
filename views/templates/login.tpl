@@ -2,7 +2,7 @@
 	<head>
 		<title>bugapp login page</title>
 		<meta charset="utf-8">
-        <link rel="stylesheet" href="views/css/login.css">
+        <link rel="stylesheet" href="views/css/home.css">
         </head>
 	<body style="size: 100%;">
 	

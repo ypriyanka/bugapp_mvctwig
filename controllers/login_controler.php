@@ -4,6 +4,7 @@
 	class Home {
 		
 		public $twig;
+		public $data;
 		
 		public function __construct() {
 			Twig_Autoloader::register();
@@ -34,6 +35,26 @@
 		      }
 		
 	     }
+		public function signuppage(){
+			$tpl = $this -> twig -> loadTemplate("registration.tpl");
+			echo "HELLO!";
+			$tpl -> display(array());
+			
+		}
+			public function signupcheck()
+			{
+				if(isset($_POST['register']))
+			{
+				$model=new Model();
+				$result=$model -> register();
+				if($result="sucess")
+				{
+				$tpl = $this -> twig -> loadTemplate("login.tpl");	
+				$tpl -> display(array("feedback"=>"plaeselogin"));
+				}
+			}
+			}
+		
 	}
 		
 ?>	
