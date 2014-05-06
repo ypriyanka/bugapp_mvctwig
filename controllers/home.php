@@ -41,7 +41,9 @@
 		$bugs_data=$this->model->bugs_data();
 
 		$tpl = $this->twig->loadTemplate("bugs_page1.tpl");
-		$tpl->display(array("bugs_data"=>$bugs_data,"flag"=>$flag,"project"=>$project,"num_items"=>$num_items,"per_page"=>$per_page,"total_pages"=>$total_pages,"on_page"=>$on_page));
+		$tpl->display(array("bugs_data"=>$bugs_data,"flag"=>$flag,"project"=>$project,
+		"num_items"=>$num_items,"per_page"=>$per_page,"total_pages"=>$total_pages,"on_page"=>$on_page,
+		"category"=>$category,"reported_by"=>$reported_by,"priority"=>$priority));
 		}
 		 public function comments($q)
 		 {
@@ -54,19 +56,21 @@
 		
 		 }
 		 public function filter($q,$s)
-		 {   $filters;
+		 {
+		 	
+			   $filters;
 		 switch ($s) {
 			 case 'project':
-				 $filters = $this -> model -> filters($q);
+				 $filters = $this -> model -> filters($q,$s);
 				 break;
 				case 'reported_by':
-					
+					 $filters = $this -> model -> filters($q,$s);
 					break;
 					case 'category':
-						
+						 $filters = $this -> model -> filters($q,$s);
 						break; 
 						case 'priority':
-							
+							 $filters = $this -> model -> filters($q,$s);
 							break;
 			 
 			 default:

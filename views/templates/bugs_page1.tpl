@@ -72,8 +72,6 @@ xmlhttp.send();
 </head>
 <body>
 	{% include "header.tpl" %}
-
-
 	<div class="wrap">
 		<table class="tablehead">
 			<tr id="theader">

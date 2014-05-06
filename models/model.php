@@ -118,10 +118,10 @@ class Model {
 					
   			return $row1;
 	}
-	public function filters($q)
+	public function filters($q,$s)
 	{
 		$row1=array();
-		$query='SELECT * FROM bugs where project="'.$q.'"';
+		$query='SELECT * FROM bugs where '.$s.'="'.$q.'"';
 			$result=mysql_query($query);	
   			while($row = mysql_fetch_assoc($result))
   							{
