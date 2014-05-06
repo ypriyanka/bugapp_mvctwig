@@ -9,7 +9,8 @@ $database->select('bug_tracker');
 
 class Valid
 {
-	public $a;
+	public $feedback1;
+	
 public function validation()
 {
         
@@ -27,31 +28,30 @@ $Passworddb = $row['Password'];
     //comparison start
 if($UserNamef != $UserNamedb)
      {
-      $feedback="Your account was not found, please try again.";
+      $this->feedback1="Your account was not found, please try again.";
 
      }
 else
 {
 if($Passwordf != $Passworddb)
 {
-$feedback="Your password is incorrect";
-$this->a="invalid";
+$this->feedback1="Your password is incorrect";
+//$this->a="invalid";
 }
 else
 {
 $_SESSION['UserName2']= $_POST['UserName'];
-//header('location:model/bugs_page.php');	
-$this->a="valid";
+$this->feedback1="valid";
 }
 }
      //comparison done
 }
     else
    {
-        $feedback="Please fill in all the blank areas.";
-		$this->a="invalid";
+        $this->feedback1="Please fill in all the blank areas.";
+		//$this->a="invalid";
    }
-return $this->a;
+return $this->feedback1;
 }
 }
 //$database->disconnectdb();
