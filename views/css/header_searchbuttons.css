@@ -1,0 +1,22 @@
+
+
+table{
+	width: 100%;
+	border-collapse:collapse;
+	text-align: center;
+	}
+
+table,td ,th{
+	border: 1px solid #818181;
+    }
+    
+#theader{
+	height: 50px;
+	background: #C0C0C0;
+	color: blue;
+    }
+    
+#content{
+	height:70px;
+	background:#FF9999;
+    }

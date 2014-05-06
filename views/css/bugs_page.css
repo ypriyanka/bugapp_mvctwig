@@ -1,0 +1,139 @@
+table,td ,th{
+	border: 1px solid #818181;
+}
+
+table{
+	width: 100%;
+	border-collapse:collapse;
+	text-align: center;
+	}
+
+#theader{
+	height: 50px;
+	background: #C0C0C0;
+	color: blue;
+}
+#theader,#Id,#fId{
+	width: 3%;
+}
+
+#desc,#fdesc{
+	width: 40%;
+}
+#flag,#status{
+	width: 4%;
+}
+#category,#priority{
+	width: 5%;
+}
+
+#updateon,#updateby,#project{
+	width: 7%;
+}
+#reportedon,#reportedby,#assignto{
+	width: 6%;
+}
+
+#content{
+	height:70px;
+	background:#FF9999;
+}
+
+
+#filter{
+	width: 100%;
+	height: 15px;
+	background: #C0C0C0;
+}
+#fflag{
+	border: none;
+	background:#B4B4B4;
+}
+
+#fproject,#fcategory,#freportedby,#fpriority,#fassignto,#fstatus{
+background: #B4B4B4;
+border: none;
+}
+#desc,#reportedon,#updateby,#updateon,#Id{
+	border-bottom: none;
+}
+#filter,#fdesc,#freportedon,#fupdateby,#fupdateon,#fId{
+	border-top:none;
+}
+
+
+ .tablehead{
+ 	float:left;
+ }
+ 
+#tabledata{
+	width:100%;
+	float:left;
+}
+
+
+#cid{
+	width: 2.9%;
+}
+
+#cflag{
+	background:#ffffff;
+	width:4.3%;
+}
+#cdescription{
+	width: 37.1%;
+}
+#cproject{
+	width: 6.9%;
+}
+#cstatus{
+	width: 5.5%;
+}
+#ccategory{
+	width:6.1%;
+}
+#cpriority{
+	width:6.4%;
+}
+#clastupdatedon{
+	width:
+}
+#clastupdatedby{
+	width:
+}
+
+#creportedon{
+	width:5.8%;
+}
+#creportedby{
+	width:5.9%;
+}
+#cassignedto{
+	width: 6%;
+}
+#messageBox{
+border-right: 1px solid #000000;
+position:absolute;
+width: 217px;
+height: 100px;
+z-index: 1;
+background-color: white;
+border-style: solid;
+border-width: 1px;
+display:none;
+}
+#closeButt{
+width: 100%;
+height: 10px;
+z-index: 1;
+
+left: 0px;
+top: 0px;
+background-color: white;
+}
+#contents{
+width: auto;
+height: auto;
+z-index: 2;
+}
+

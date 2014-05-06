@@ -15,10 +15,14 @@
 			break;
 			
 		case 'displayBugs':
-			
+			$controller->bugs_display();
 			break;
 			
-		case 'loginProcess':
+		case 'comments':
+			$controller->comments($_GET['q']);
+			break;
+		case 'filtering':
+			$controller -> filter($_GET['q'],$_GET['s']);
 			
 			break;
 		

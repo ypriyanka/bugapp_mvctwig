@@ -1,0 +1,204 @@
+/* wrap styling */
+
+#wrap{
+	width: 100%;
+}
+
+
+/* list boxes styling */
+
+ #content{
+	float:left;
+	width: 45%;
+	background: #E8E8E8;
+	border-top: 2px solid #A5A5A5;
+	border-left: 2px solid #A5A5A5;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	
+	
+	
+}
+
+#content p{
+	padding-top: 10px;
+	padding-left: 15px;
+	color: green;
+	
+
+}
+
+#reportlb{
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left;
+    width: 20%;
+}
+
+#categorylb{
+float:left;
+	padding-right: 15px;
+	width: 17%;
+}
+
+#prioritylb{
+	float:left;
+	padding-right: 15px;
+	width: 16%;
+}
+#assignedtolb{
+	padding-right: 15px;
+	float: left;
+	width: 20%
+}
+#statuslb{
+	padding-right: 15px;
+	float: left;
+	width: 16%
+}
+#orglb{
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+    width: 20%;
+    padding-top: 15px;
+}
+
+
+#projectlb{
+float: left;
+padding-right: 15px;
+padding-top: 15px;	
+}
+
+
+#projectlb{
+	width: 73%;
+}
+
+
+
+#lb1,#lb2,#lb3,#lb4,#lb5,#lb6{
+	background:#ffffff;
+	width: 100%;
+}
+
+#lb7{
+	background:#ffffff;
+	width: 24%;
+}
+
+/* form elements styling*/
+form{
+	width: 100%;
+	float: left;
+	
+}
+
+
+
+#fe1,#fe2,#fe3,#fe4,#fe5,#fe6,#fe7,#fe8,#fe9,#fe10,#fe11,#fe12{
+	width: 95%;
+	float: left;
+	margin-top: 15px;
+	padding-left: 15px;
+	
+}
+
+#labeldesc{
+	padding-right: 5%;
+}
+
+#labelcmt{
+	padding-right: 6%;
+	
+}
+#labelsince{
+	padding-right: 8.8%;
+}
+#labelsince2,#selectreport,#selectreport2,#selectupdate,#selectupdate2{
+	padding-left: 1.5%;
+}
+#labelsince2,#selectreport,#selectreport2,#selectupdate,#selectupdate2{
+	color: blue;
+	
+}
+#selectreport,#selectupdate{
+	padding-right: 2%;
+}
+#report2{
+	padding-right: 1%;
+}
+
+
+#updateon2{
+	padding-right: 1.2%;
+}
+
+
+#update{
+	padding-right: 2%;
+}
+#inputsince,#inputreport,#inputreport2,#inputupdate,#inputupdate2,#inputtcids,#inputtcid{
+	width: 20%;
+}
+
+
+#inputdesc,#inputcmt{
+	width: 65%;
+}
+
+#reporton{
+	padding-right: 4.7%;
+}
+#process{
+	float: left;
+	margin-top: 15px;
+	padding-right: 21.7%;
+}
+#fe6{
+	
+	
+}
+#lb8{
+	margin-top: 5px;
+}
+#tcids{
+	padding-right: 13.4%;
+}
+#bugtype{
+	float:left;
+	margin-top: 15px;
+	padding-right: 21.6%;
+}
+#lb9{
+	
+}
+#tcid{
+	padding-right: 14.7%;
+}
+
+#b1{
+	margin-left: 45%;
+}
+#b2{
+	margin-left: 65%;
+	margin-bottom: 15px;
+}
+#b1,#b2{
+	color: blue;
+	background: #FFE4B5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
