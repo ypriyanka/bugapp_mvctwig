@@ -7,19 +7,55 @@ class Database {
         $this->username = $iusername;
         $this->password = $ipassword;
     }
+	
+	
     public function connectdb(){
-        mysql_connect($this->host, $this->username, $this->password)
-            OR die("There was a problem connecting to the database.");
-        //echo 'successfully connected to database<br />';
+        	try{
+        $a=mysql_connect($this->host, $this->username, $this->password);
+            //OR die("There was a problem connecting to the database.");
+        if(!$a){
+        throw new Exception(mysqli_connect_error());
+		}
+			}
+		
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
+		
+        
     }
+	
+	
     public function select($database){
-        mysql_select_db($database)
-            OR die("There was a problem selecting the database.");
-       // echo 'successfully selected database<br />';
-    }
+    	try{
+        $b=mysql_select_db($database);
+		if(!$b){
+        throw new Exception(mysqli_connect_error());
+		}
+			}
+            //OR die("There was a problem selecting the database.");
+       catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
+    
+	}
+	
+	
     public function disconnectdb(){
-        mysql_close($this->connectdb())
-            OR die("There was a problem disconnecting from the database.");
+    	try{
+       $c= mysql_close($this->connectdb());
+	   if(!$c){
+        throw new Exception(mysqli_connect_error());
+		}
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
+		
+            //OR die("There was a problem disconnecting from the database.");
     }
 }
 
