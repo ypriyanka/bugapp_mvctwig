@@ -1,5 +1,5 @@
 <?php
-require_once "../controllers/home.php";
+require_once dirname(__FILE__)."/home.php";
 class ModelTest extends PHPUnit_Framework_TestCase
 {
 	 public  $stub;

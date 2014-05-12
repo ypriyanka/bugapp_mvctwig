@@ -1,7 +1,7 @@
 <?php
 ini_set('diaplay_error', 1);
-require_once "../vendor/twig/twig/lib/Twig/Autoloader.php";
-require_once "../models/model.php";
+require_once "./vendor/twig/twig/lib/Twig/Autoloader.php";
+require_once "./models/model.php";
 class Home {
 	public $twig;
 	public $model;
