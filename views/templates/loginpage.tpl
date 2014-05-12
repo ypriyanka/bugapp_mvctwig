@@ -42,5 +42,5 @@
 				<li><a href="#">Donate</a></li>
 			</ul>
 		</sidebar>
-</body>
+	</body>
 </html>

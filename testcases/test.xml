@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<dataset>
+	<duplog Name="Jyostna" UserName='Jyostna12' Password="123123" Email="Jyostna@gmail.com" gender="Female"/>
+	<duplog Name="Priyanka" UserName='Priyanka12' Password="1233123" Email="Priyanka@gmail.com" gender="Female"/>
+	<duplog Name="Abhishek" UserName='abhishek12' Password="1213123" Email="abhishek@gmail.com" gender="Male"/>
+</dataset>
