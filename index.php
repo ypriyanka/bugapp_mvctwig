@@ -4,29 +4,37 @@
 	
 	$action = (isset($_REQUEST['action']))?$_REQUEST['action']:"";
 	
-	$controller = new Home();
+	try{
+		$controller = new Home();
 	switch ($action) {
 		case 'loginProcess':
-			
 			break;
-			
 		case 'signUpProcess':
-			
 			break;
-			
 		case 'displayBugs':
 			$controller->bugs_display();
-			break;
-			
+			break;	
 		case 'comments':
 			$controller->comments($_GET['q']);
 			break;
 		case 'filtering':
 			$controller -> filter($_GET['q'],$_GET['s']);
-			
 			break;
+		case 'update':
+			$controller->update($_GET['q']);
+			break;
+			case 'update_bugs':
+				$controller->update_bugs($_POST,$_GET['q']);
+				
+				break;
 		
 		default:
 			$controller->welcome();			
 			break;
+			}
+		}
+		catch(Exception $e)
+		{
+		echo $e;	
 	} 
+	

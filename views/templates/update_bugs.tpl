@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/create_bugs.css">
+		<link rel="stylesheet" href="./views/css/create_bugs.css">
 		
 		<title>Bugs Reporting Page</title>
 		<script type="text/javascript">  
@@ -105,36 +105,14 @@
 			 			</script>  
 	</head>
 	<body>
-		<?php
-	
-		ini_set('display_errors',1);
-     
-     
-             include("temp1.php");
-             $layout=new layout();
-             $layout->printHeader();
-     
-		
-		include ('db.php');
-		$database = new database('localhost', 'root', 'vsspl');
-		$database->connectdb();
-		$database->select('bug_tracker');
-		$q1 = $_GET['q'];
-		$result = mysql_query('SELECT * FROM bugs where ID="'.$q1.'"');
-		//var_dump(mysql_fetch_assoc($result));
-   		$row = mysql_fetch_assoc($result);
-	 
-  		//var_dump($row);
-  
-   
-		?>
+	{% include "header.tpl" %}
 		
 		<div class="labels">
-			<form action="updated_bugs.php?q=<?php echo $row['ID'];?>" method="post" name="form1" onsubmit="return validation()">
+			<form action="index.php?action=update_bugs&q={{bugs.ID}}" method="post" name="form1" onsubmit="return validation()">
 				<ul>
 					<li>
 						<label for="textbox1">Description:</label>
-						<input type="input" id="textbox1" value="<?php echo $row['description'];?>" maxlength="200" name="descp" onkeyup="countCharacters('mycounter',200,'textbox1')"/>
+						<input type="input" id="textbox1" value="{{bugs.description}}" maxlength="200" name="descp" onkeyup="countCharacters('mycounter',200,'textbox1')"/>
 						<div id="characters_remaining">
 						<span id="mycounter">200</span> <span>Characters remaining</span>
 						</div><br>
@@ -151,12 +129,12 @@
 						<label>Project:</label>
 						<select name="project">
 						  	
-						  	<option<?php if ($row['project'] == 'Shipping') echo 'selected';?>>Shipping</option>
-						  	<option<?php if ($row['project'] == 'Checkout') echo 'selected';?>>Checkout</option>  
-						  	<option<?php if ($row['project'] == 'I18N') echo 'selected';?>>I18N</option>
-						  	<option<?php if ($row['project'] == 'API') echo 'selected';?>>API</option>
-						  	<option<?php if ($row['project'] == 'Bigpay') echo 'selected';?>>BigPay</option>
-						  	<option value="themes" <?php if ($row['project'] == 'Themes') echo 'selected';?>>Themes</option>
+						  	<option Themes>Shipping</option>
+						  	<option {%if bugs.project == 'Checkout' %}selected{% endif %}>Checkout</option>  
+						  	<option {%if bugs.project == 'I18N' %}selected{% endif %}>I18N</option>
+						  	<option {%if bugs.project == 'API' %}selected{% endif %}>API</option>
+						  	<option{%if bugs.project == 'BigPay' %}selected{% endif %}>BigPay</option>
+						  	<option {%if bugs.project == 'Themes' %}selected{% endif %} value="themes" >Themes</option>
 						  	
 						</select>
 						
@@ -167,24 +145,24 @@
 						
 						<select name="category">
 							
-							<option <?php if ($row['category'] == 'Bug') echo 'selected';?>>Bug</option>
-							<option <?php if ($row['category'] == 'Enhancement') echo 'selected';?>>Enhancement</option>  
-							<option <?php if ($row['category'] == 'Clarrification') echo 'selected';?>>Clarification</option>
-							<option <?php if ($row['category'] == 'Questions') echo 'selected';?>>Questions</option>
-							<option <?php if ($row['category'] == 'Requirements') echo 'selected';?>>Requirements</option>
+							<option >Bug</option>
+							<option {%if bugs.category == 'Enhancement' %}selected{% endif %}>Enhancement</option>  
+							<option {%if bugs.category == 'Clarification' %}selected{% endif %}>Clarification</option>
+							<option {%if bugs.category == 'Questions' %}selected{% endif %}>Questions</option>
+							<option {%if bugs.category == 'Requirements' %}selected{% endif %}>Requirements</option>
 						</select>
 						
 					</li>
 					<li>
-						<label>Priority:<?php echo $row['priority'];?></label>
+						<label>Priority:</label>
 						
 						<select name="priority">
 							
-							<option <?php if ($row['priority'] == 'NO PRIORITY') echo 'selected';?>></option>
-							<option <?php if ($row['priority'] == 'NO PRIORITY') echo 'selected';?>>NO PRIORITY</option>
-							<option <?php if ($row['priority'] == 'LOW') echo 'selected';?>>Low</option>
-							<option <?php if ($row['priority'] == 'Medium') echo 'selected';?>>Medium</option>  
-							<option <?php if ($row['priority'] == 'High') echo 'selected';?>>High</option>
+							
+							<option {%if bugs.priority == 'PRIORITY' %}selected{% endif %}>NO PRIORITY</option>
+							<option {%if bugs.priority == 'Low' %}selected{% endif %}>Low</option>
+							<option {%if bugs.priority == 'Medium' %}selected{% endif %}>Medium</option>  
+							<option {%if bugs.priority == 'High' %}selected{% endif %}>High</option>
 						</select>
 						
 					</li>
@@ -193,9 +171,9 @@
 						<select name="assgn">
 								<option></option>
 								
-								<option <?php if ($row['assigned_to'] == 'priya') echo 'selected';?>>priya</option>
-								<option <?php if ($row['assigned_to'] == 'pratyusha') echo 'selected';?>>pratyusha</option>  
-								<option <?php if($row['assigned_to']=='jyotsna') echo 'selected';?>>jyotsna</option>
+								<option {%if bugs.assigned_to == 'priya' %}selected{% endif %}>priya</option>
+								<option {%if bugs.assigned_to == 'pratyusha' %}selected{% endif %}>pratyusha</option>  
+								<option {%if bugs.assigned_to == 'jyotsna' %}selected{% endif %}>jyotsna</option>
 							</select>
 			
 						
@@ -207,13 +185,13 @@
 						<select name="status">
 								<option></option>
 								
-								<option <?php if ($row['status'] == 'No PRIORITY') echo 'selected';?>>No PRIORITY</option>
-								<option <?php if ($row['status'] == 'Checked IN') echo 'selected';?>>Checked IN</option>  
-								<option <?php if($row['status']=='Closed') echo 'selected';?>>Closed</option>
-								<option <?php if($row['status']=='In Progress') echo 'selected';?>>In Progress</option>
-								<option <?php if($row['status']=='ReOpen') echo 'selected';?>>ReOpen</option>
-								<option <?php if($row['status']=='Not A Bug') echo 'selected';?>>Not A Bug</option>
-								<option <?php if($row['status']=='Postponed') echo 'selected';?>>Postponed</option>
+								<option {%if bugs.status == 'No PRIORITY' %}selected{% endif %}>No PRIORITY</option>
+								<option {%if bugs.status == 'Checked IN' %}selected{% endif %}>Checked IN</option>  
+								<option {%if bugs.status == 'Closed' %}selected{% endif %}>Closed</option>
+								<option {%if bugs.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+								<option {%if bugs.status == 'ReOpen' %}selected{% endif %}>ReOpen</option>
+								<option {%if bugs.status == 'Not A Bug' %}selected{% endif %}>Not A Bug</option>
+								<option {%if bugs.status == 'Postponed' %}selected{% endif %}>Postponed</option>
 						</select>
 							
 					</li>
@@ -221,8 +199,8 @@
 						<label>Bug Type:</label>
 						<select name="bugtype">
 							<option></option>
-							<option <?php if($row['bugtype']=='Functional') echo 'selected';?>>Functional</option>
-							<option <?php if($row['bugtype']=='UI') echo 'selected';?>>UI</option>  
+							<option {%if bugs.bugtype == 'Functional' %}selected{% endif %}>Functional</option>
+							<option {%if bugs.bugtype == 'UI' %}selected{% endif %}>UI</option>  
 						</select>	
 							
 					
@@ -243,26 +221,6 @@
 			</div>
 			</form>
 		</div>
-		<?php echo'<div>';
-		 $query='SELECT comment_desp from comments WHERE bid='.$q1.'';
-  
-     $a = mysql_query($query);
-	 if (!$a)
-  {
-  die('Error: ' .mysql_error());
-  }
-else
-	{ echo '<table>';
-		 while($row = mysql_fetch_assoc($a))
-    {
-    	echo'<tr ><td style=border-style:double;>'.
-    	
-    	 $row['comment_desp'].'<br></td></tr>';
-		 
-	}
-	echo '</table>';
-	}
 		
-		echo '</div>';?>
 	</body>
 </html>
